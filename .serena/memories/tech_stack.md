@@ -1,0 +1,6 @@
+- Package manager: npm (`package-lock.json` checked in).
+- Runtime stack: Next `16.2.9`, React `19.2.4`, React DOM `19.2.4`, TypeScript `^5`.
+- Styling/tooling: Sass `1.101.0`; global CSS in `src/app/globals.css`; shared reset in `src/shared/styles/reset.css`.
+- Linting: ESLint `^9` flat config via `eslint.config.mjs`, extending `eslint-config-next/core-web-vitals` and `eslint-config-next/typescript`.
+- Formatting conventions are driven by `.prettierrc`; import ordering is handled by `prettier-plugin-organize-imports`.
+- Next config enables `reactCompiler: true` and disables dev indicators.

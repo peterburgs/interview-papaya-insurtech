@@ -1,0 +1,505 @@
+.pricingPage {
+  --page-bg: #e7f0fb;
+  --panel-bg: rgba(249, 252, 255, 0.88);
+  --panel-border: rgba(31, 78, 121, 0.12);
+  --panel-shadow: 0 24px 80px rgba(31, 78, 121, 0.14);
+  --text-strong: #102a43;
+  --text-muted: #486581;
+  --text-soft: #627d98;
+  --accent-bronze: #7b8da6;
+  --accent-silver: #4d7ea8;
+  --accent-gold: #2f6ea6;
+  --accent-recommended: #155eef;
+  --accent-recommended-soft: rgba(21, 94, 239, 0.14);
+  --success-bg: rgba(21, 94, 239, 0.1);
+  --success-border: rgba(21, 94, 239, 0.22);
+  min-height: 100vh;
+  padding: 40px 20px 72px;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.86), transparent 30%),
+    radial-gradient(circle at top right, rgba(115, 174, 255, 0.28), transparent 24%),
+    linear-gradient(180deg, #f6fbff 0%, var(--page-bg) 54%, #dceaf9 100%);
+  color: var(--text-strong);
+}
+
+.shell {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+.hero {
+  display: grid;
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  width: fit-content;
+  padding: 7px 12px;
+  border: 1px solid rgba(31, 41, 51, 0.08);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.64);
+  color: var(--text-muted);
+  font-size: 0.83rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.heroTitle {
+  max-width: 12ch;
+  font-family: var(--font-display), serif;
+  font-size: clamp(2.7rem, 7vw, 5.2rem);
+  font-variation-settings:
+    "SOFT" 50,
+    "WONK" 0;
+  line-height: 0.94;
+  letter-spacing: -0.06em;
+}
+
+.heroSubtitle {
+  max-width: 700px;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+.heroHighlights {
+  display: grid;
+  gap: 12px;
+}
+
+.heroHighlights li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-muted);
+}
+
+.heroHighlights li::before {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #155eef, #63a3ff);
+  content: "";
+  box-shadow: 0 0 0 6px rgba(21, 94, 239, 0.08);
+}
+
+.planGrid {
+  display: grid;
+  gap: 18px;
+  margin-bottom: 34px;
+}
+
+.planCard {
+  position: relative;
+  display: grid;
+  gap: 20px;
+  padding: 24px;
+  border: 1px solid var(--panel-border);
+  border-radius: 28px;
+  background: var(--panel-bg);
+  backdrop-filter: blur(18px);
+  box-shadow: var(--panel-shadow);
+}
+
+.planCard::after {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.38), transparent 36%);
+  pointer-events: none;
+  content: "";
+}
+
+.recommendedCard {
+  border-color: rgba(21, 94, 239, 0.24);
+  background:
+    linear-gradient(180deg, rgba(224, 238, 255, 0.94), rgba(249, 252, 255, 0.97)), var(--panel-bg);
+  transform: translateY(-4px);
+}
+
+.planCardBronze {
+  box-shadow: 0 20px 64px rgba(72, 106, 145, 0.12);
+}
+
+.planCardSilver {
+  box-shadow: 0 20px 64px rgba(43, 88, 138, 0.16);
+}
+
+.planCardGold {
+  box-shadow: 0 20px 64px rgba(34, 92, 160, 0.14);
+}
+
+.planHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.planName {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display), serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.planTone {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+
+.bronzeTone {
+  background: linear-gradient(135deg, #9db8d6, #637f9f);
+}
+
+.silverTone {
+  background: linear-gradient(135deg, #7fb2e5, #3d6f9e);
+}
+
+.goldTone {
+  background: linear-gradient(135deg, #5b9bde, #1f5d96);
+}
+
+.recommendedBadge,
+.valueBadge {
+  display: inline-flex;
+  width: fit-content;
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.recommendedBadge {
+  border: 1px solid rgba(21, 94, 239, 0.18);
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--accent-recommended);
+}
+
+.priceBlock {
+  display: grid;
+  gap: 6px;
+}
+
+.priceValue {
+  font-family: var(--font-display), serif;
+  font-size: clamp(2.3rem, 5vw, 3.3rem);
+  font-weight: 750;
+  letter-spacing: -0.06em;
+}
+
+.priceSuffix {
+  color: var(--text-soft);
+  font-size: 0.94rem;
+}
+
+.summary {
+  color: var(--text-muted);
+}
+
+.explanation {
+  padding: 14px 16px;
+  border: 1px solid rgba(21, 94, 239, 0.12);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.66);
+  color: var(--accent-recommended);
+  font-weight: 600;
+}
+
+.statsList,
+.featureList {
+  display: grid;
+  gap: 12px;
+}
+
+.statsList li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--text-muted);
+}
+
+.statValue {
+  color: var(--text-strong);
+  font-weight: 650;
+}
+
+.featureList li {
+  display: flex;
+  gap: 10px;
+  color: var(--text-muted);
+}
+
+.featureList li::before {
+  margin-top: 0.32rem;
+  color: var(--accent-recommended);
+  font-size: 0.85rem;
+  content: "●";
+}
+
+.comparisonSection {
+  padding: 26px 24px;
+  border: 1px solid var(--panel-border);
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: var(--panel-shadow);
+}
+
+.comparisonHeader {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.comparisonTitle {
+  font-family: var(--font-display), serif;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  letter-spacing: -0.05em;
+}
+
+.comparisonSubtitle {
+  max-width: 780px;
+  color: var(--text-muted);
+}
+
+.desktopTable {
+  display: none;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.table {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 24px;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.table thead th {
+  padding: 18px;
+  border-bottom: 1px solid rgba(31, 41, 51, 0.08);
+  background: rgba(233, 243, 255, 0.86);
+  text-align: left;
+  vertical-align: bottom;
+}
+
+.table thead th:first-child {
+  width: 28%;
+}
+
+.planColumnHeading {
+  display: grid;
+  gap: 8px;
+}
+
+.planColumnName {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.planColumnPrice {
+  color: var(--text-muted);
+  font-size: 0.94rem;
+}
+
+.sectionRow td {
+  padding: 22px 18px 12px;
+  color: var(--text-soft);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.metricLabelCell {
+  padding: 16px 18px;
+  border-top: 1px solid rgba(31, 41, 51, 0.07);
+  vertical-align: top;
+}
+
+.metricName {
+  display: block;
+  font-weight: 650;
+}
+
+.metricDescription {
+  display: block;
+  margin-top: 4px;
+  color: var(--text-soft);
+  font-size: 0.9rem;
+}
+
+.metricValueCell {
+  padding: 16px 18px;
+  border-top: 1px solid rgba(31, 41, 51, 0.07);
+  vertical-align: top;
+}
+
+.metricValueCard {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid transparent;
+  border-radius: 18px;
+  box-sizing: border-box;
+}
+
+.metricValueCard.bestValue {
+  border-color: transparent;
+}
+
+.mobileValueCard.bestValue {
+  border-color: transparent;
+}
+
+.missingValue {
+  color: var(--text-soft);
+}
+
+.valueText {
+  font-weight: 700;
+}
+
+.valueBadge {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid rgba(21, 94, 239, 0.16);
+  border-radius: 999px;
+  background: rgba(21, 94, 239, 0.1);
+  color: var(--accent-recommended);
+}
+
+.mobileComparison {
+  display: grid;
+  gap: 20px;
+}
+
+.mobileSection {
+  display: grid;
+  gap: 14px;
+}
+
+.mobileSectionTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+.mobileMetric {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid rgba(31, 41, 51, 0.07);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.56);
+}
+
+.mobileMetricHeader {
+  display: grid;
+  gap: 4px;
+}
+
+.mobileMetricName {
+  font-weight: 650;
+}
+
+.mobileMetricDescription {
+  color: var(--text-soft);
+  font-size: 0.92rem;
+}
+
+.mobileMetricValues {
+  display: grid;
+  gap: 10px;
+}
+
+.mobileValueCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid transparent;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.84);
+}
+
+.mobileValueIdentity {
+  display: grid;
+  gap: 4px;
+}
+
+.mobilePlanName {
+  font-weight: 650;
+}
+
+.mobilePlanMeta {
+  color: var(--text-soft);
+  font-size: 0.88rem;
+}
+
+.mobileValueText {
+  text-align: right;
+  font-weight: 700;
+}
+
+@media (min-width: 760px) {
+  .pricingPage {
+    padding-inline: 28px;
+    padding-top: 52px;
+  }
+
+  .hero {
+    grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+    align-items: end;
+    margin-bottom: 38px;
+  }
+
+  .planGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+  }
+}
+
+@media (min-width: 980px) {
+  .comparisonSection {
+    padding: 30px;
+  }
+
+  .desktopTable {
+    display: block;
+  }
+
+  .mobileComparison {
+    display: none;
+  }
+}

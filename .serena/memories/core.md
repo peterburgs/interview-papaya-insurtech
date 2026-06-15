@@ -1,0 +1,4 @@
+- Next app-router project rooted at `src/app`; top-level route currently redirects `/` to `/pricing`.
+- Main rendered feature is the insurance pricing table from `src/modules/insurance-plan`; read `mem:insurance-plan/core` for that module boundary and data-shaping rules.
+- Internal imports use the `@/* -> src/*` alias; route code, shared styles, and domain modules all resolve through that alias.
+- Read `mem:tech_stack` for framework and tooling versions, `mem:conventions` for code organization and naming, `mem:suggested_commands` for local workflows, and `mem:task_completion` for the done-check commands.

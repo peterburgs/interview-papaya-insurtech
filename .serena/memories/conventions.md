@@ -1,0 +1,6 @@
+- Keep app routes in `src/app`; put domain logic/components in `src/modules/<domain>` and shared cross-domain assets under `src/shared`.
+- Prefer barrel exports (`index.ts`) at module and subfolder boundaries; route files import module APIs through the barrel when available.
+- Domain type layers are explicit: raw/API payload types stay snake_case, normalized app/domain types are camelCase, and conversion happens in dedicated `transform-from-raw-*` utilities.
+- Domain shapes use `interface` declarations rather than `type` aliases in the current code.
+- Imports use double quotes and are organized automatically by the Prettier plugin; formatting uses semicolons, trailing commas, width 100, tab width 2.
+- Route components default-export the page component; current code sometimes annotates pages/components with `FC`.

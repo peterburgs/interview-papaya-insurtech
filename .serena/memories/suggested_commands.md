@@ -1,0 +1,5 @@
+- Install deps: `npm install`
+- Start dev server: `npm run dev` (binds Next dev server to port `4000`; ignore the default README port note).
+- Lint repo: `npm run lint -- .`
+- Production build check: `npm run build`
+- Start built app: `npm run start`

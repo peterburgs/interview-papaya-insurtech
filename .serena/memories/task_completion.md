@@ -1,0 +1,3 @@
+- Minimum completion gate for code changes: `npm run lint -- .`
+- Run `npm run build` when changes affect routes, module exports, typing, or any code that could break Next compilation.
+- There is no dedicated test script or formatter script in `package.json`; do not assume test or format automation exists until added.

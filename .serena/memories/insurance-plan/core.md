@@ -1,0 +1,5 @@
+- Public entrypoint: `src/modules/insurance-plan/index.ts` currently re-exports `InsurancePlanTable` for route consumption.
+- Module layout is split into `typing/` and `utils/`; keep transport/domain schemas in `typing` and transformation logic in `utils`.
+- Raw insurance-plan payloads use snake_case field names and nullable optional benefit sections; normalized insurance-plan types mirror the same structure in camelCase.
+- Adaptation from raw payloads to UI/domain shape belongs in `transform-from-raw-to-insurance-plan.util.ts` and related transform utilities, not in page components.
+- The `/pricing` route consumes this module through the `@/modules/insurance-plan` barrel rather than deep relative imports.
