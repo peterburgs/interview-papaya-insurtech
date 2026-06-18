@@ -55,6 +55,8 @@ Phone: 096 229 9449 - 0825 955 955
 
 Here is the deployed product:
 
+![Pricing Page Preview](public/images/preview.png)
+
 ```
 https://peterburgs.github.io/interview-papaya-insurtech/pricing
 
